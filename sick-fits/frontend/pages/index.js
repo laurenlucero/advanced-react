@@ -1,10 +1,12 @@
-import Page from '../components/Page';
+export { default } from './products';
 
-export default function IndexPage() {
-  return (
-    <>
-      <p>Hello, Index</p>
-      <code>var</code>
-    </>
-  );
-}
+// import Page from '../components/Page';
+
+// export default function IndexPage() {
+//   return (
+//     <>
+//       <p>Hello, Index</p>
+//       <code>var</code>
+//     </>
+//   );
+// }
