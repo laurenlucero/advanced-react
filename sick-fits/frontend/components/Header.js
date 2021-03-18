@@ -18,11 +18,11 @@ const LogoStyled = styled.h1`
 
 const HeaderStyled = styled.header`
   .bar {
+    border-bottom: 10px solid var(--black, black);
     display: grid;
     grid-template-columns: auto 1fr;
-    border-bottom: 10px solid var(--black, black);
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
   }
   .sub-bar {
     display: grid;
@@ -36,13 +36,13 @@ export default function Header() {
     <HeaderStyled>
       <div className="bar">
         <LogoStyled>
-          <Link href="/">Sick Fits Logo</Link>
+          <Link href="/">Sick Fits</Link>
         </LogoStyled>
+        <Nav />
       </div>
       <div className="sub-bar">
         <p>Search</p>
       </div>
-      <Nav />
     </HeaderStyled>
   );
 }
