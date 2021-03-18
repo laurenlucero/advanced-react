@@ -1,18 +1,28 @@
 import { useState } from 'react';
 
 export default function useForm(initial = {}) {
-  // create state obj for inputs
+  // create a state object for our inputs
   const [inputs, setInputs] = useState(initial);
 
+  // {
+  //   name: 'wes',
+  //   description: 'nice shoes',
+  //   price: 1000
+  // }
+
   function handleChange(e) {
-    let { type, name, value } = e.target;
+    let { value, name, type } = e.target;
     if (type === 'number') {
       value = parseInt(value);
     }
     if (type === 'file') {
-      value[0] = e.target.files;
+      [value] = e.target.files;
     }
-    setInputs({ ...inputs, [name]: value }); // copy existing state
+    setInputs({
+      // copy the existing state
+      ...inputs,
+      [name]: value,
+    });
   }
 
   function resetForm() {
@@ -25,7 +35,8 @@ export default function useForm(initial = {}) {
     );
     setInputs(blankState);
   }
-  // return what we want to surface from this hook
+
+  // return the things we want to surface from this custom hook
   return {
     inputs,
     handleChange,
