@@ -1,8 +1,14 @@
 import { useState } from 'react';
+import { useEffect } from 'react/cjs/react.production.min';
 
 export default function useForm(initial = {}) {
   // create a state object for our inputs
   const [inputs, setInputs] = useState(initial);
+  const initialValues = Object.values(initial).join('');
+  useEffect(() => {
+    // runs when the things we are watching change
+    setInputs(initial);
+  }, [initialValues]);
 
   // {
   //   name: 'wes',
