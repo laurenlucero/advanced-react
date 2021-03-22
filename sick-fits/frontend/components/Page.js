@@ -55,7 +55,6 @@ export default function Page({ children }) {
     <div>
       <GlobalStyled />
       <Header />
-      <h1>I am the Page Component</h1>
       <InnerStyled>{children}</InnerStyled>
     </div>
   );
